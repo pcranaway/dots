@@ -1,0 +1,9 @@
+window:
+        padding:
+                x: 24
+                y: 24
+
+font:
+        normal:
+                family: Fira Code
+                size: 20.0
