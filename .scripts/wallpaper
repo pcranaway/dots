@@ -1,0 +1,6 @@
+#!/bin/sh
+
+wallpaper="$HOME/.wallpapers/10.jpg"
+
+# feh --bg-scale $wallpaper
+wal -i $wallpaper

@@ -1,0 +1,63 @@
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.background       $bg
+
+set $mod Mod1
+font pango:monospace 8
+floating_modifier $mod
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left 20
+bindsym $mod+Shift+j move down 20
+bindsym $mod+Shift+k move up 20
+bindsym $mod+Shift+l move right 20
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+v fullscreen toggle
+
+bindsym $mod+1 workspace "internet"
+bindsym $mod+2 workspace "discord"
+bindsym $mod+3 workspace "game" 
+bindsym $mod+4 workspace "code" 
+bindsym $mod+5 workspace "terminal"
+bindsym $mod+6 workspace "spotify"
+
+bindsym $mod+Shift+1 move container to workspace "internet"
+bindsym $mod+Shift+2 move container to workspace "discord"
+bindsym $mod+Shift+3 move container to workspace "game"
+bindsym $mod+Shift+4 move container to workspace "code"
+bindsym $mod+Shift+5 move container to workspace "terminal"
+bindsym $mod+Shift+6 move container to workspace "spotify"
+
+bindsym $mod+Shift+r restart
+
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+for_window [class="[.]*"] floating enable
+for_window [class="^.*"] border pixel 0
+
+exec_always sh $HOME/.scripts/layout
+exec_always sh $HOME/.scripts/wallpaper
