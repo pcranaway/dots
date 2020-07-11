@@ -8,13 +8,8 @@ export PATH=$PATH:$GOPATH/bin/
 export PATH=$PATH:$HOME/.scripts/
 export PATH=$PATH:$HOME/.rvm/bin
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # prompt
-export PS1='\W # '
+YASH_PS1='${PWD} # '
 
 # aliases
 alias l='ls -la'
@@ -23,8 +18,11 @@ alias cl='c;l'
 alias g='git'
 
 # options
-export EDITOR=vim
+EDITOR=vim
 
 # setup color scheme
-wal -R
-clear
+if [[ $- == *i* ]]
+then
+    wal -R
+    clear
+fi
