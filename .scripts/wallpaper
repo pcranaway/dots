@@ -1,6 +1,5 @@
 #!/bin/sh
 
-wallpaper="$HOME/.wallpapers/10.jpg"
+wallpaper="$HOME/.wallpapers/pkl0potf5yw41.jpg"
 
-# feh --bg-scale $wallpaper
-wal -i $wallpaper
+feh --bg-scale $wallpaper
