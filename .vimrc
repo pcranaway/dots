@@ -1,16 +1,3 @@
-call plug#begin('~/.vim/plugged')
-
-Plug 'dylanaraps/wal.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-python/python-syntax'
-Plug 'preservim/nerdtree'
-
-call plug#end()
-
-" color scheme
-colorscheme wal
-
 " general settings.
 set ttyfast
 set copyindent
@@ -36,10 +23,7 @@ let mapleader = "\<Space>"
 
 nnoremap <silent> <leader>t :term ++rows=20<CR>
 
+noremap ; :
+
 vnoremap < <gv
 vnoremap > >gv
-
-" nerdtree stuff
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
