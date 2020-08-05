@@ -1,20 +1,14 @@
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-client.background       $bg
-
 set $mod Mod1
 font pango:monospace 8
 floating_modifier $mod
 
+bindsym $mod+shift+b exec chromium --incognito
+bindsym $mod+b exec chromium
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty -e ranger
+
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+bindsym $mod+d exec dmenu_run
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -51,10 +45,6 @@ bindsym $mod+Shift+r restart
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 for_window [class="[.]*"] floating enable
 for_window [class="^.*"] border pixel 0
