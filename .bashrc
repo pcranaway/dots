@@ -1,24 +1,22 @@
-# path
-export PATH="$PATH:$HOME/.scripts/:$HOME/.cargo/bin:$HOME/.local/bin"
+export PATH=$PATH:$HOME/.local/bin/:$HOME/.scripts/:$HOME/go/bin
+export EDITOR=nvim
+export GOPATH=$HOME/go
 
-# environment
-export TERM="xterm-256color"
+source /usr/local/share/bash-completion/bash_completion.sh
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+export PS1='(\W) -> '
+# paleta < $HOME/oss/paleta/palettes/atom-dark
 
-# autologin on tty1
-if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]
-then
-	exec xinit
+alias c='clear'
+alias l='ls -lah'
+alias cl='c;l'
+alias g='git'
+alias vim='nvim'
+
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    export XDG_RUNTIME_DIR="/tmp/${USER}"
+    if [ ! -d  "$XDG_RUNTIME_DIR" ]; then
+        mkdir "$XDG_RUNTIME_DIR"
+        chmod 0700 "$XDG_RUNTIME_DIR"
+    fi
 fi
-
-# aliases
-alias ls='ls --color=auto'
-alias l="ls -lah"
-alias c="clear"
-alias cl="c;l"
-alias g="git"
-
-# prompt
-PS1='[\u@\h \W]\$ '
