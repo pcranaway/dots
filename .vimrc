@@ -1,6 +1,5 @@
-set nocompatible
-
 " general settings.
+set nocompatible
 set ttyfast
 set copyindent
 set autoindent
