@@ -29,3 +29,9 @@ noremap ; :
 
 vnoremap < <gv
 vnoremap > >gv
+
+" plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'davidhalter/jedi-vim'
+call vundle#end()
