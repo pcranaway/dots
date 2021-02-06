@@ -14,7 +14,6 @@ set wildmenu
 set expandtab
 set cmdheight=2
 set mouse=a
-
 set shiftwidth=4
 set ignorecase
 set smartcase
