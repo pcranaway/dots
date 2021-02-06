@@ -6,11 +6,11 @@ window:
     columns: 0
     lines: 0
 
-  padding:
-    x: 16
-    y: 16
+  # padding:
+  #   x: 16
+  #   y: 16
 
-  dynamic_padding: false
+  # dynamic_padding: false
   decorations: full
 
 scrolling:
@@ -22,6 +22,5 @@ cursor:
 
 font:
   normal:
-    family: Hack
+    # family: Hack
     style: Regular
-
