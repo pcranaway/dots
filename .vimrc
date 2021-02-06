@@ -22,6 +22,8 @@ set expandtab
 set backspace=2
 set wrap lbr
 
+syntax on
+
 noremap ; :
 
 vnoremap < <gv
