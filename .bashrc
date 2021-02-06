@@ -1,22 +1,20 @@
-export PATH=$PATH:$HOME/.local/bin/:$HOME/.scripts/:$HOME/go/bin
-export EDITOR=nvim
+# if not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# start sway if this is the first tty
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec sway
+fi
+
+# prompt
+PS1='[\u@\h \W]\$ '
+
+# options
+export EDITOR=vim
 export GOPATH=$HOME/go
 
-source /usr/local/share/bash-completion/bash_completion.sh
-
-export PS1='(\W) -> '
-# paleta < $HOME/oss/paleta/palettes/atom-dark
-
+# aliases
 alias c='clear'
-alias l='ls -lah'
-alias cl='c;l'
 alias g='git'
-alias vim='nvim'
-
-if [ -z "$XDG_RUNTIME_DIR" ]; then
-    export XDG_RUNTIME_DIR="/tmp/${USER}"
-    if [ ! -d  "$XDG_RUNTIME_DIR" ]; then
-        mkdir "$XDG_RUNTIME_DIR"
-        chmod 0700 "$XDG_RUNTIME_DIR"
-    fi
-fi
+alias l='ls -lah'
+alias cl='c && l'
