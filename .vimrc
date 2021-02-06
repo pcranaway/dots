@@ -24,9 +24,6 @@ set expandtab
 set backspace=2
 set wrap lbr
 
-" map leader key to space bar.
-let mapleader = "\<Space>"
-
 noremap ; :
 
 vnoremap < <gv
