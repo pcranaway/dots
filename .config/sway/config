@@ -55,8 +55,8 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-bindsym $mod+Shift+Left  move left
-bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
-    bindsym $up   resize shrink height 10px
+    bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
     bindsym Left resize shrink width 10px
