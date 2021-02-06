@@ -1,5 +1,4 @@
 set nocompatible
-filetype off
 
 " general settings.
 set ttyfast
@@ -24,10 +23,6 @@ set sw=4 ts=4 sts=4
 set expandtab
 set backspace=2
 set wrap lbr
-
-" enable syntax highlighting.
-filetype on
-filetype plugin indent on
 
 " map leader key to space bar.
 let mapleader = "\<Space>"
