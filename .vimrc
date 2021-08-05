@@ -50,7 +50,6 @@ nnoremap J mzJ`z
 "         FORMATTING           "
 """"""""""""""""""""""""""""""""
 
-
 " use 4 character wide tabs even though it looks more like 8
 set sw=4 ts=4 sts=4
 set expandtab
@@ -66,3 +65,24 @@ autocmd FileType asm setlocal noexpandtab sw=8 ts=8 sts=8
 
 " automatically re-read file if it changed while it's open (doesn't work lol)
 set autoread
+
+""""""""""""""""""""""""""""""""
+"         PLUGINS              "
+""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'kien/ctrlp.vim'
+call plug#end()
+
+""""""""""""""""""""""""""""""""
+"         NERDTREE             "
+""""""""""""""""""""""""""""""""
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
