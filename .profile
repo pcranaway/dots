@@ -1,4 +1,4 @@
-# load .profile
+# load profiles from ~/.profile.d/
 for profile in "${HOME}/etc/profile.d/*.sh"; do
     test -r "$profile" && . "$profile"
 done
