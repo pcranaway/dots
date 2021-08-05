@@ -1,6 +1,5 @@
 # load profiles from ~/.profile.d/
 for profile in $HOME/.profile.d/*.sh; do
-echo $profile
     test -e $profile && . $profile
 done
 
