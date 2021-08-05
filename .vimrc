@@ -6,7 +6,7 @@
 " but now it looks weird if they're not there)
 set rnu
 
-" synrax stuff
+" syntax stuff
 syntax on
 
 """"""""""""""""""""""""""""""""
@@ -66,6 +66,8 @@ autocmd FileType asm setlocal noexpandtab sw=8 ts=8 sts=8
 " automatically re-read file if it changed while it's open (doesn't work lol)
 set autoread
 
+" gotta to make use of the abbreviation feature!! (abbr <typo> <correct form>)
+
 """"""""""""""""""""""""""""""""
 "         PLUGINS              "
 """"""""""""""""""""""""""""""""
@@ -74,6 +76,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-sensible'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
@@ -87,3 +90,21 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+
+""""""""""""""""""""""""""""""""
+"             COC              "
+""""""""""""""""""""""""""""""""
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
