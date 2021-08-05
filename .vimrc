@@ -73,6 +73,7 @@ set autoread
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-sensible'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
