@@ -1,0 +1,24 @@
+# set path
+PATH=
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/usr/bin"
+
+# force PATH to be environment cause we support greta thunderbird
+export PATH
+
+# load profiles from /etc/profile.d
+if test -d /etc/profile.d/; then
+    for profile in /etc/profile.d/*.sh; do
+        test -r "$profile" && . "$profile"
+    done
+    # no idea what this does
+    # unset profile
+fi
+
+# set language (not sure what LC_COLLATE does but it looks important
+export LANG="en_US.UTF-8"
+export LC_COLLATE="C"
+
+# load the darn kshrc
+test -e $HOME/.kshrc && export ENV=$HOME/.kshrc
