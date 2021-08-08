@@ -9,6 +9,9 @@ set rnu
 " syntax stuff
 syntax on
 
+" color scheme
+colorscheme railscasts
+
 """"""""""""""""""""""""""""""""
 "         MAPPPINGS            "
 """"""""""""""""""""""""""""""""
@@ -54,6 +57,8 @@ nnoremap J mzJ`z
 set sw=4 ts=4 sts=4
 set expandtab
 set tabstop=4
+
+set textwidth=72
 
 " use tabs on makefiles, and something else on assembly files (is that even the
 " assembly file format?)
