@@ -108,3 +108,17 @@ function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+""""""""""""""""""""""""""""""""
+"         Status Line          "
+""""""""""""""""""""""""""""""""
+
+function! Quote() abort
+    return substitute(system("cat ~/.quotes | sort -u | shuf | head -n1"), "\n", "", "g")
+endfunction
+
+set laststatus=2
+set statusline=
+set statusline+=\ %l
+set statusline+=\ %*
+set statusline+=\%{Quote()}
