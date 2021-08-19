@@ -10,7 +10,7 @@ set rnu
 syntax on
 
 " color scheme
-colorscheme railscasts
+" colorscheme railscasts
 
 """"""""""""""""""""""""""""""""
 "         MAPPPINGS            "
@@ -82,6 +82,8 @@ Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
