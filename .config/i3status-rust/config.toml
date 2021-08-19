@@ -1,0 +1,27 @@
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization} {frequency}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "used"
+format = "{icon} {used}/{total} ({available} free)"
+
+[[block]]
+block = "nvidia_gpu"
+label = "GPU LOL"
+show_memory = false
+show_clocks = true
+interval = 1
+
+[[block]]
+block = "time"
+format = "%a %d/%m %R"
+timezone = "US/Pacific"
+interval = 60
+locale = "en_US"
