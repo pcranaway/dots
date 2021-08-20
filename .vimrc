@@ -12,6 +12,13 @@ syntax on
 " color scheme
 " colorscheme railscasts
 
+function! Light()
+    set background=light
+    colorscheme intellij
+endfunction
+
+command Light call Light()
+
 """"""""""""""""""""""""""""""""
 "         MAPPPINGS            "
 """"""""""""""""""""""""""""""""
@@ -84,6 +91,9 @@ Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-rfc'
+Plug 'tpope/vim-fugitive'
+Plug 'chiendo97/intellij.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
