@@ -9,6 +9,8 @@ set rnu
 " syntax stuff
 syntax on
 
+set hlsearch
+
 " color scheme
 " colorscheme railscasts
 
