@@ -136,8 +136,8 @@ function! Quote() abort
     return substitute(system("cat ~/.quotes | sort -u | shuf | head -n1"), "\n", "", "g")
 endfunction
 
-set laststatus=2
-set statusline=
-set statusline+=\ %l
-set statusline+=\ %*
-set statusline+=\%{Quote()}
+" set laststatus=2
+" set statusline=
+" set statusline+=\ %l
+" set statusline+=\ %*
+" set statusline+=\%{Quote()}
