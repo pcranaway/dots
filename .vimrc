@@ -87,7 +87,7 @@ set autoread
 """"""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim'
@@ -99,16 +99,18 @@ Plug 'chiendo97/intellij.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
-"         NERDTREE             "
+"         EXPLORER             "
 """"""""""""""""""""""""""""""""
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+" 
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"     \ quit | endif
 
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+nnoremap <C-t> :CocCommand explorer<CR>
 
 """"""""""""""""""""""""""""""""
 "             COC              "
