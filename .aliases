@@ -2,6 +2,8 @@ alias grep='grep --color'
 alias tdl='youtube-dl -x --audio-format mp3'
 alias bc='bc -l'
 alias ls='ls --color=auto'
+alias hs='cat ~/.hist | grep'
+alias vim='emacs'
 
 bench() {
     wrk http://0.0.0:$1
