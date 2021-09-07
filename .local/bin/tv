@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mpv --shuffle --volume 100 ~/docs/tv
