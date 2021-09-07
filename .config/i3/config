@@ -15,7 +15,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym $mod+Return exec st
+bindsym $mod+shift+t exec st
 
 bindsym $mod+Shift+q kill
 
@@ -94,8 +94,28 @@ bar {
         status_command i3status-rs
 }
 
+# redshift
+bindsym $mod+t mode "$mode_redshift"
+set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+set $kill_redshift pkill -9 redshift;
+
+# remove borders or soemthing
+for_window [class="^.*"] border pixel 0
+
+mode "$mode_redshift" {
+    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # greek keyboard
 exec_always "setxkbmap -model pc104 -layout us,gr -option grp:lwin_toggle"
 
 exec_always "apply_layout"
 exec_always "$HOME/.local/bin/wallpaper"
+exec_always "xcompmgr"
