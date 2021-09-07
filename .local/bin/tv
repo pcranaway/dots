@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mpv --shuffle --volume 100 ~/docs/tv
+mpv --shuffle --volume=100 ~/docs/tv/The\ Big\ Bang\ Theory
