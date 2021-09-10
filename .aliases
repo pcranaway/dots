@@ -4,6 +4,7 @@ alias bc='bc -l'
 alias ls='ls --color=auto'
 alias hs='cat ~/.hist | grep'
 alias rr='ranger'
+alias .rr='. ranger'
 
 bench() {
     wrk http://0.0.0:$1
