@@ -10,6 +10,7 @@ set rnu
 syntax on
 
 set hlsearch
+colorscheme darkblue
 
 " color scheme
 " colorscheme railscasts
@@ -88,7 +89,7 @@ set autoread
 
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim'
 Plug 'elixir-editors/vim-elixir'
@@ -99,6 +100,7 @@ Plug 'chiendo97/intellij.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
@@ -108,10 +110,18 @@ call plug#end()
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+
+""""""""""""""""""""""""""""""""
+"          FZF.VIM             "
+""""""""""""""""""""""""""""""""
+nnoremap <C-p><C-f> :Files<CR>
+nnoremap <C-p><C-c> :Colors<CR>
+nnoremap <C-p><C-b> :Buffers<CR>
+nnoremap <C-p><C-g> :Commits<CR>
+
 
 """"""""""""""""""""""""""""""""
 "             COC              "
