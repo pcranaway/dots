@@ -4,7 +4,7 @@
 
 " relational numbers (fun fact, I don't take advantage of them,
 " but now it looks weird if they're not there)
-set rnu
+# set rnu
 
 " syntax stuff
 syntax on
@@ -101,6 +101,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
+Plug 'morhetz/gruvbox'
+Plug 'gleam-lang/gleam.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""
@@ -118,10 +120,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 "          FZF.VIM             "
 """"""""""""""""""""""""""""""""
 nnoremap <C-p><C-f> :Files<CR>
-nnoremap <C-p><C-c> :Colors<CR>
+nnoremap <C-c><C-s> :Colors<CR>
 nnoremap <C-p><C-b> :Buffers<CR>
 nnoremap <C-p><C-g> :Commits<CR>
-
 
 """"""""""""""""""""""""""""""""
 "             COC              "
@@ -140,6 +141,20 @@ function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gf :CocFix<CR>
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 """"""""""""""""""""""""""""""""
 "         Status Line          "
