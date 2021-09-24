@@ -5,6 +5,7 @@
 " relational numbers (fun fact, I don't take advantage of them,
 " but now it looks weird if they're not there)
 " set rnu
+set rnu!
 
 " syntax stuff
 syntax on
