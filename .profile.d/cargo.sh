@@ -1,2 +1,2 @@
 #!/bin/sh
-test -d "${HOME}.cargo/" && . ${HOME}/.cargo/env
+. ${HOME}/.cargo/env
