@@ -23,6 +23,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'wadackel/vim-dogrun'
 Plug 'nvim-treesitter/nvim-treesitter'
 
+-- statusline
+Plug 'itchyny/lightline.vim'
+
 -- neovim lua development
 Plug 'tjdevries/nlua.nvim'
 Plug 'nvim-lua/plenary.nvim'
