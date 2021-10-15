@@ -21,6 +21,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 -- color scheme
 Plug 'wadackel/vim-dogrun'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 -- neovim lua development
 Plug 'tjdevries/nlua.nvim'
