@@ -1,3 +1,5 @@
+local utils = require('utils')
+
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require('cmp')
@@ -45,3 +47,7 @@ lsp_installer.on_server_ready(function(server)
 	server:setup(opts)
 	vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+-- more bindings
+utils.map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>')
+utils.map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
