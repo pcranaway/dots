@@ -20,7 +20,8 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'nvim-telescope/telescope.nvim'
 
 -- color scheme
-Plug 'wadackel/vim-dogrun'
+-- Plug 'wadackel/vim-dogrun'
+Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 -- statusline
