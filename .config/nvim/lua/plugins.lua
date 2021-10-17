@@ -16,8 +16,9 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
--- telescope
+-- file management
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'kevinhwang91/rnvimr'
 
 -- color scheme
 -- Plug 'wadackel/vim-dogrun'
@@ -30,5 +31,9 @@ Plug 'itchyny/lightline.vim'
 -- neovim lua development
 Plug 'tjdevries/nlua.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+-- attention
+Plug 'andweeb/presence.nvim'
 
 vim.call('plug#end')
