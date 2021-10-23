@@ -28,6 +28,10 @@ Plug 'nvim-treesitter/nvim-treesitter'
 -- statusline
 Plug 'itchyny/lightline.vim'
 
+-- tree
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+
 -- neovim lua development
 Plug 'tjdevries/nlua.nvim'
 Plug 'nvim-lua/plenary.nvim'
