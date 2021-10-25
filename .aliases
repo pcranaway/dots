@@ -8,5 +8,5 @@ alias .rr='. ranger'
 alias vf='vim $(fzf)'
 
 bench() {
-    wrk http://0.0.0:$1
+    wrk http://0.0.0.0:$1
 }
