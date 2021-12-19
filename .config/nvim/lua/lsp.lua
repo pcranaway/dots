@@ -34,6 +34,9 @@ cmp.setup({
 })
 
 local lsp_installer = require("nvim-lsp-installer")
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig/configs'
+local util = require 'lspconfig/util'
 
 lsp_installer.on_server_ready(function(server)
 	local opts = {}
@@ -47,6 +50,20 @@ lsp_installer.on_server_ready(function(server)
 	server:setup(opts)
 	vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+-- configs.nimlsp = {
+-- 	default_config = {
+-- 		cmd = {'nimlsp'},
+-- 		filetypes = {'nim'},
+-- 		root_dir = util.root_pattern('*.nimble'),
+-- 		settings = {},
+-- 	}
+-- }
+
+-- lspconfig.nimlsp.setup({})
+
+-- spell checking
+require('spellsitter').setup()
 
 -- more bindings
 utils.map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>')

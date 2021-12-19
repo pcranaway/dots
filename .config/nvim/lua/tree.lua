@@ -6,13 +6,7 @@ require'nvim-tree'.setup {
   hijack_cursor       = true,
   update_cwd          = true,
   diagnostics = {
-    enable = true,
-    icons = {
-      hint = "H",
-      info = "i",
-      warning = "!",
-      error = "E",
-    }
+    enable = false,
   },
   view = {
     auto_resize = true,

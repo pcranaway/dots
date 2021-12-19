@@ -1,7 +1,7 @@
 require('utils')
-require('plugins')
 require('bindings')
 require('formatting')
+require('plugins')
 require('lsp')
 require('telescope')
 require('tree')
