@@ -1,3 +1,3 @@
 #!/bin/sh
 
-feh --bg-scale $(find $HOME/.walls/2 | shuf | head -n1)
+feh --bg-scale $(find $HOME/.walls/3 | shuf | head -n1)

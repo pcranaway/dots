@@ -6,5 +6,6 @@ done
 export LANG='en_US.UTF-8'
 export EDITOR=vim
 export BROWSER=firefox
+export PS1='k# '
 
 export ENV=$HOME/.kshrc
